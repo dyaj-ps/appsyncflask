@@ -20,17 +20,17 @@ def index():
 
 @app.route('/getEmployee/<emp_id>', methods=['GET'])
 def get_employee(emp_id):
-    return json.dumps([emp for emp in employees if emp['id'] == int(emp_id)])
+    return json.dumps([emp for emp in employees if emp['id'] == int(emp_id)][0])
 
 
 @app.route('/getDepartment/<dept_id>', methods=['GET'])
 def get_department(dept_id):
-    return json.dumps([dept for dept in departments if dept['id'] == int(dept_id)])
+    return json.dumps([dept for dept in departments if dept['id'] == int(dept_id)][0])
 
 
 @app.route('/getDesignation/<pos_id>', methods=['GET'])
 def get_designation(pos_id):
-    return json.dumps([position for position in designations if position['id'] == int(pos_id)])
+    return json.dumps([position for position in designations if position['id'] == int(pos_id)][0])
 
 
 if __name__ == "__main__":
