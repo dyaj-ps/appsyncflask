@@ -12,6 +12,13 @@ departments = [{"id": 1, "deptName": "account"},
 designations = [{"id": 1, "position": "Developer"},
                 {"id": 2, "position": "Designer"}]
 
+emps = [{"empID": "A", "skill": "X", "department": "D1"},
+        {"empID": "B", "department": "D2"},
+        {"empID": "C", "department": "D2"}]
+
+depts = [{"deptName": "D1", "skill": "Z", "course": "java"},
+         {"deptName": "D2", "skill": "Z", "course": "python"}]
+
 
 @app.route('/', methods=['GET'])
 def index():
@@ -31,6 +38,21 @@ def get_department(dept_id):
 @app.route('/getDesignation/<pos_id>', methods=['GET'])
 def get_designation(pos_id):
     return json.dumps([position for position in designations if position['id'] == int(pos_id)][0])
+
+
+@app.route('/getEmployee/<emp_id>', methods=['GET'])
+def get_employee(emp_id):
+    return json.dumps([emp for emp in employees if emp['id'] == int(emp_id)][0])
+
+
+@app.route('/getSkilledEmployees', methods=['GET'])
+def get_skilled_employee():
+    return json.dumps(emps)
+
+
+@app.route('/getDepartmentDetail/<dept_name>', methods=['GET'])
+def get_dept_details(dept_name):
+    return json.dumps([dept for dept in depts if dept['deptName'] == dept_name][0])
 
 
 if __name__ == "__main__":
