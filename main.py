@@ -40,11 +40,6 @@ def get_designation(pos_id):
     return json.dumps([position for position in designations if position['id'] == int(pos_id)][0])
 
 
-@app.route('/getEmployee/<emp_id>', methods=['GET'])
-def get_employee(emp_id):
-    return json.dumps([emp for emp in employees if emp['id'] == int(emp_id)][0])
-
-
 @app.route('/getSkilledEmployees', methods=['GET'])
 def get_skilled_employee():
     return json.dumps(emps)
