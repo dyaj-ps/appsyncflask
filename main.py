@@ -45,6 +45,11 @@ def get_skilled_employee():
     return json.dumps(emps)
 
 
+@app.route('/getAllDepartments', methods=['GET'])
+def get_all_dept():
+    return json.dumps(depts)
+
+
 @app.route('/getDepartmentDetail/<dept_name>', methods=['GET'])
 def get_dept_details(dept_name):
     return json.dumps([dept for dept in depts if dept['deptName'] == dept_name][0])
