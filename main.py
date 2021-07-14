@@ -17,7 +17,7 @@ emps = [{"empID": "A", "skill": "X", "department": "D1"},
         {"empID": "C", "department": "D2"}]
 
 depts = [{"deptName": "D1", "skill": "Z", "course": "java"},
-         {"deptName": "D2", "skill": "Z", "course": "python"}]
+         {"deptName": "D2", "skill": "Y", "course": "python"}]
 
 
 @app.route('/', methods=['GET'])
